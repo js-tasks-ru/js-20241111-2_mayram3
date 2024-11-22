@@ -1,5 +1,5 @@
 /**
- * createGetter_1 - creates function getter which allows select value from object
+ * createGetter1 - creates function getter which allows select value from object
  * решение с рекурсией и нечистой функцией
  * @param {string} path - the strings path separated by dot
  * @returns {function} - function-getter which allow get value from object by set path
