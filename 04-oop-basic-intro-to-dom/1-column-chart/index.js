@@ -67,7 +67,7 @@ export default class ColumnChart {
 
   createTemplate() {
     return `
-    <div class="${this.createColumnChartClasses()}" style="${this.createColumnChartStyles()}">
+      <div class="${this.createColumnChartClasses()}" style="${this.createColumnChartStyles()}">
         <div class="column-chart__title">
           ${this.label}
           ${this.createLinkTemplate()}
