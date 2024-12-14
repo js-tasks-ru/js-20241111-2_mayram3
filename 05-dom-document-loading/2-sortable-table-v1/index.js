@@ -1,3 +1,5 @@
+const validSortTypes = ["number", "string"];
+
 export default class SortableTable {
   element;
   subElements = {};
@@ -167,7 +169,7 @@ export default class SortableTable {
     const { sortable, sortType } =
       this.headerConfig.find(({ id }) => id === fieldValue) || {};
 
-    if (!sortable) {
+    if (!sortable || !validSortTypes.includes(sortType)) {
       return;
     }
 
