@@ -148,6 +148,18 @@ export default class SortableTable {
     });
   }
 
+  sortData(sortType) {
+    const sortDirection = this.orderValue === "asc" ? 1 : -1;
+
+    if (sortType === "number") {
+      this.sortNumericData(sortDirection);
+    }
+
+    if (sortType === "string") {
+      this.sortStringData(sortDirection);
+    }
+  }
+
   sort(fieldValue, orderValue) {
     this.sortedFieldValue = fieldValue;
     this.orderValue = orderValue;
@@ -159,14 +171,7 @@ export default class SortableTable {
       return;
     }
 
-    const sortDirection = orderValue === "asc" ? 1 : -1;
-
-    if (sortType === "number") {
-      this.sortNumericData(sortDirection);
-    } else {
-      this.sortStringData(sortDirection);
-    }
-
+    this.sortData(sortType);
     this.update();
   }
 
